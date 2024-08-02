@@ -13,7 +13,7 @@ const PORT = process.env.PORT
 const app = express()
 
 app.use(cors({
-    origin: ['http://localhost:5173'],
+    origin: ['http://localhost:5173','https://prompt-lib-nu.vercel.app'],
     methods: ['GET', 'POST'],
     credentials: true
 }))
