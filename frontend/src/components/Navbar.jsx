@@ -84,7 +84,7 @@ const Navbar = ({ inCreatePage }) => {
     setIsModalOpen(false); // Close the modal
   };
   return (
-    <nav className="p-4 bg-white shadow-md">
+    <nav className="p-4">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <Link to='/' className="flex items-center">
