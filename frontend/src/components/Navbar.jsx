@@ -74,6 +74,7 @@ const Navbar = ({ inCreatePage }) => {
 
   const logout = () => {
     googleLogout();
+    navigate('/')
     localStorage.removeItem('access_token');
     localStorage.removeItem('email');
     localStorage.removeItem('name');
