@@ -29,21 +29,25 @@ const Create = () => {
     e.preventDefault();
     const newPrompt = { prompt, tags };
     const email = localStorage.getItem('email');
-    if (prompt !== '' && email) {
-      try {
-        const response = await api.post('/prompts/create', {
-          prompt: newPrompt.prompt,
-          tags: newPrompt.tags,
-          email: email
-        });
-        if (response.status === 201) {
-          navigate('/');
+    if(email){
+      if (prompt !== '') {
+        try {
+          const response = await api.post('/prompts/create', {
+            prompt: newPrompt.prompt,
+            tags: newPrompt.tags,
+            email: email
+          });
+          if (response.status === 201) {
+            navigate('/');
+          }
+        } catch (error) {
+          console.error('Error creating prompt:', error);
         }
-      } catch (error) {
-        console.error('Error creating prompt:', error);
+      } else {
+        alert('Please enter a prompt');
       }
-    } else {
-      alert('Please enter a prompt');
+    }else{
+      alert('Please login first')
     }
   };
 
