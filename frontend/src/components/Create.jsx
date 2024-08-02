@@ -29,7 +29,7 @@ const Create = () => {
     e.preventDefault();
     const newPrompt = { prompt, tags };
     const email = localStorage.getItem('email');
-    if (prompt !== '') {
+    if (prompt !== '' && email) {
       try {
         const response = await api.post('/prompts/create', {
           prompt: newPrompt.prompt,
