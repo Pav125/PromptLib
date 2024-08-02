@@ -48,6 +48,7 @@ const Create = () => {
       }
     }else{
       alert('Please login first')
+      navigate('/')
     }
   };
 
