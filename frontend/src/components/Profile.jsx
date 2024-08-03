@@ -2,11 +2,13 @@ import React, { useEffect, useMemo, useState } from 'react';
 import Navbar from './Navbar';
 import Prompts from './prompts/Prompts';
 import axios from 'axios';
+import SkeletonPromptcard from './SkeletonPromptcard';
 
 const Profile = () => {
   const URL = import.meta.env.VITE_API;
   const [prompts, setPrompts] = useState([]);
   const [userEmail, setUserEmail] = useState('');
+  const [loading, setLoading] = useState(true);
 
   const api = useMemo(() => axios.create({
     baseURL: URL,
@@ -22,6 +24,7 @@ const Profile = () => {
 
     const fetchPrompts = async () => {
       if (userEmail) {
+        setLoading(true);
         try {
           const response = await api.get('/prompts/user-prompts', {
             params: { email: userEmail }
@@ -29,6 +32,8 @@ const Profile = () => {
           setPrompts(response.data);
         } catch (error) {
           console.error('Failed to fetch user prompts:', error);
+        } finally {
+          setLoading(false);
         }
       }
     };
@@ -48,7 +53,15 @@ const Profile = () => {
           Welcome to your personalized profile page
         </p>
         <div>
-          <Prompts prompts={prompts} />
+          {loading ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-10">
+              {Array(6).fill().map((_, index) => (
+                <SkeletonPromptcard key={index} />
+              ))}
+            </div>
+          ) : (
+            <Prompts prompts={prompts} />
+          )}
         </div>
       </div>
     </>
