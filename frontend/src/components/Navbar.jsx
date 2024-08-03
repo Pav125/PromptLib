@@ -38,7 +38,6 @@ const Navbar = ({ inCreatePage }) => {
     } catch (error) {
       console.error('Failed to fetch user info:', error);
       navigate('/')
-      alert('Please Sign in again!')
     }
   };
 
