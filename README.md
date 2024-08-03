@@ -81,11 +81,7 @@ PromptLib is an open-source prompting website designed to help users discover, c
 
 ## Contributing
 
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to get involved.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Contributions are welcome!
 
 ## Acknowledgements
 
