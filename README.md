@@ -11,8 +11,8 @@ PromptLib is an open-source prompting website designed to help users discover, c
 
 ## Technologies Used
 
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Node.js, Express
+- **Frontend**: React (set up using Vite), Tailwind CSS
+- **Backend**: Node.js, Express, Nodemon
 - **Database**: MongoDB
 - **Authentication**: @react-oauth/google
 - **Version Control**: Git
@@ -39,9 +39,9 @@ PromptLib is an open-source prompting website designed to help users discover, c
 
 2. **Install dependencies for the frontend and backend**
     ```bash
-    cd client
+    cd frontend
     npm install
-    cd ../server
+    cd ../backend
     npm install
     ```
 
@@ -50,19 +50,26 @@ PromptLib is an open-source prompting website designed to help users discover, c
     Create a `.env` file in the `server` directory and add the following variables:
     ```plaintext
     MONGO_URI=your_mongodb_uri
-    GOOGLE_CLIENT_ID=your_google_client_id
-    GOOGLE_CLIENT_SECRET=your_google_client_secret
+    PORT=your_local_port
+    ```
+4. **Set up environment variables**
+
+    Create a `.env` file in the `server` directory and add the following variables:
+    ```plaintext
+    VITE_GOOGLE_CLIENT_ID=your_google_client_id
+    VITE_GOOGLE_CLIENT_SECRET=your_google_client_secret
+    VITE_API=your_backend_api
     ```
 
-4. **Run the development server**
+5. **Run the development server**
     ```bash
     # In the server directory
-    npm run dev
-    # In the client directory
     npm start
+    # In the client directory
+    npm run dev
     ```
 
-    The frontend should be running on `http://localhost:3000` and the backend on `http://localhost:5000`.
+    The frontend should be running on `http://localhost:5174` and the backend on `http://localhost:PORT`.
 
 ## Usage
 
@@ -86,7 +93,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or feedback, feel free to reach out at [your-email@example.com].
+For any questions or feedback, feel free to reach out to Pav125 at [devipavan824@gmail.com](mailto:devipavan824@gmail.com).
 
 ---
 
