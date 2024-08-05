@@ -47,14 +47,14 @@ PromptLib is an open-source prompting website designed to help users discover, c
 
 3. **Set up environment variables**
 
-    Create a `.env` file in the `server` directory and add the following variables:
+    Create a `.env` file in the `backend` directory and add the following variables:
     ```plaintext
     MONGO_URI=your_mongodb_uri
     PORT=your_local_port
     ```
 4. **Set up environment variables**
 
-    Create a `.env` file in the `server` directory and add the following variables:
+    Create a `.env` file in the `frontend` directory and add the following variables:
     ```plaintext
     VITE_GOOGLE_CLIENT_ID=your_google_client_id
     VITE_GOOGLE_CLIENT_SECRET=your_google_client_secret
